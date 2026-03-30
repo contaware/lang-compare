@@ -6,24 +6,36 @@ This guide provides a side-by-side comparison of three of the most popular progr
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Whitespaces & Indentation** | **Strict Indentation:** Meaningful whitespace. | **Ignored:** Blocks defined by `{}`. | **Ignored:** Blocks defined by `{}`. |
-| **Line Termination** | **Newline:** Semicolons optional. | **Optional Semicolon:** ASI used, `;` recommended. | **Required Semicolon:** Strictly required `;`. |
-| **Case Sensitivity** | **Fully Sensitive** | **Fully Sensitive** | **Mixed:** Vars sensitive; functions/keywords insensitive. |
+| **Comments** |  |  |  |
+| **Tags** | none | `<script>code</script>` | `<?php code ?>` <br> and <br>`<?= "echoed" ?>` |
+| **Whitespaces & indentation** | Whitespaces meaningful, code blocks are defined by indentation. Common is 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 2-4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 4 spaces for indentation. |
+| **Statement separator** | Semicolon, optional at end of line. | Semicolon, optional at end of line. | Semicolon, can only be omitted when preceding `?>` |
+| **Case sensitivity** | Fully sensitive | Fully sensitive | **Sensitive**: variables, properties, constants and array indexes.<br>**Insensitive**: functions, methods, classes, namespaces and keywords. |
+| **General naming convention** | Preferred is snake_case | Preferred is camelCase | Mixed snake_case and camelCase |
+| **Classes naming convention** | PascalCase | PascalCase | PascalCase |
+| **Constants naming convention** | SNAKE_CASE | SNAKE_CASE | SNAKE_CASE |
 
-## 2. Variables, Constants, and Data Types
+## 2. Variables, Constants and Data Types
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Variables** | `name = "Bob"` | `let name = "Bob";` | `$name = "Bob";` |
-| **Constants** | `PI = 3.14` (Convention) | `const PI = 3.14;` | `const PI = 3.14;` |
-| **Null/Missing** | `None` | `null` and `undefined` | `null` |
+| **Primitive datatypes** | **Immutable**<br>`num = 10`<br>`flt = 3.14`<br>`flag = True`<br>`name = "Bob"` | **Immutable**<br>`let num = 10;`<br>`let flt = 3.14;`<br>`let flag = true;`<br>`let name = "Bob";` | **Mutable**<br>`$num = 10;`<br>`$flt = 3.14;`<br>`$flag = true;`<br>`$name = "Bob";` |
+| **Constants** | `PI = 3.14` | `const PI = 3.14;` | `const PI = 3.14;`<br>`define('PI', 3.14);` |
+| **Cast** | `num = int("10")`<br>`flt = float("1.1")` | `let num = parseInt("10");`<br>`let flt = parseFloat("1.1");`<br> | `$num = (int)"10";`<br>`$flt = (float)"1.1";` |
+| **Test type** | `if type(num) is int:`<br>`if type(flt) is float:`<br>`if type(flag) is bool:` | `if (typeof num === "number")`<br>`if (typeof flt === "number")`<br>`if (typeof flag === "boolean")`<br>Note: in JS int and float are both of `number` type. | `if (is_int($num))`<br>`if (is_float($flt))`<br>`if (is_bool($flag))` |
+| **Print type** | `print(type(num))` | `console.log(typeof num);` | `var_dump($num);` |
+| **Missing** | `None` is intentional absence. | `null` is intentional absence.<br>`undefined` means uninitialized. | `null` is intentional absence. |
+| **Test defined** | `if 'val' in locals():` | `if (typeof val !== "undefined")` | `if (isset($val))`<br>Note: tests whether defined and not null. |
 
 ## 3. Strings
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Interpolation** | `f"Hi {name}"` | ` `Hi ${name}` ` | `"Hi $name"` |
-| **Multi-line** | `"""Line 1\nLine 2"""` | ` `Line 1\nLine 2` ` | `<<<EOF\nLine 1\nLine 2\nEOF;` |
+| **Single vs double quotes** | Identical behavior: parse escape sequences. | Identical behavior: parse escape sequences. | **Single-quotes**: literal.<br>**Double-quotes**: parse vars and escape sequences. |
+| **Raw strings** | `r"Literal\n"`<br>`r'Literal\n'` | `` String.raw`Literal\n` `` | `'Literal\n'` |
+| **Interpolation** | `f"Hi {name}"`<br>`f'Hi {name}'` | `` `Hi ${name}` `` | `"Hi $name"`<br>`"Hi {$name}"` |
+| **Multi-line** | `"""L1`<br>`L2"""`<br>`'''L1`<br>`L2'''` | `` `L1``<br>``L2` `` | `"L1`<br>`L2"`<br>`'L1`<br>`L2'` |
+| **Common functions** | `len(s)`<br>`s.upper()`<br>`s.find(sub)`<br>`s.replace(old, new)` | `s.length`<br>`s.toUpperCase()`<br>`s.indexOf(sub)`<br>`s.replace(old, new)` | `strlen($s)`<br>`strtoupper($s)`<br>`strpos($s, $sub)`<br>`str_replace($old, $new, $s)` |
 
 ## 4. Operators
 
@@ -31,7 +43,7 @@ This guide provides a side-by-side comparison of three of the most popular progr
 | :--- | :--- | :--- | :--- |
 | **Arithmetic** | `**` (power), `//` (floor) | `**` (power) | `**` (power) |
 | **Comparison** | `==`, `is` (identity) | `==`, `===` (strict) | `==`, `===` (strict) |
-| **Logical** | `and`, `or`, `not` | `&&`, `||`, `!` | `&&`, `||`, `!` |
+| **Logical** | `and`, `or`, `not` | `&&`, `\|\|`, `!` | `&&`, `\|\|`, `!` |
 
 ## 5. Collections
 
