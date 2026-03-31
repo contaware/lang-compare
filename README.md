@@ -2,18 +2,19 @@
 
 This guide provides a side-by-side comparison of three of the most popular programming languages.
 
-## 1. Basic Syntax
+## 1. Basics
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Comments** |  |  |  |
+| **Comments** | `#` | `//` `/* .. */` | `//` `#` `/* .. */` |
 | **Tags** | none | `<script>code</script>` | `<?php code ?>` <br> and <br>`<?= "echoed" ?>` |
-| **Whitespaces & indentation** | Whitespaces meaningful, code blocks are defined by indentation. Common is 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 2-4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 4 spaces for indentation. |
+| **Whitespaces & indentation** | Whitespaces meaningful, code blocks are defined by indentation. Common is 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 2 or 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 4 spaces for indentation. |
 | **Statement separator** | Semicolon, optional at end of line. | Semicolon, optional at end of line. | Semicolon, can only be omitted when preceding `?>` |
 | **Case sensitivity** | Fully sensitive | Fully sensitive | **Sensitive**: variables, properties, constants and array indexes.<br>**Insensitive**: functions, methods, classes, namespaces and keywords. |
 | **General naming convention** | Preferred is snake_case | Preferred is camelCase | Mixed snake_case and camelCase |
 | **Classes naming convention** | PascalCase | PascalCase | PascalCase |
-| **Constants naming convention** | SNAKE_CASE | SNAKE_CASE | SNAKE_CASE |
+| **Constants naming convention** | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE |
+| **Output** | `print("With newline")`<br>`print("No newline", end="")` | `console.log("With newline");` | `echo "Hi", "\n";` |
 
 ## 2. Variables, Constants and Data Types
 
@@ -31,7 +32,7 @@ This guide provides a side-by-side comparison of three of the most popular progr
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Single vs double quotes** | Identical behavior: parse escape sequences. | Identical behavior: parse escape sequences. | **Single-quotes**: literal.<br>**Double-quotes**: parse vars and escape sequences. |
+| **Single vs double quotes** | **Identical behavior**: parse escape sequences. | **Identical behavior**: parse escape sequences. | **Single-quotes**: literal.<br>**Double-quotes**: parse vars and escape sequences. |
 | **Raw strings** | `r"Literal\n"`<br>`r'Literal\n'` | `` String.raw`Literal\n` `` | `'Literal\n'` |
 | **Interpolation** | `f"Hi {name}"`<br>`f'Hi {name}'` | `` `Hi ${name}` `` | `"Hi $name"`<br>`"Hi {$name}"` |
 | **Multi-line** | `"""L1`<br>`L2"""`<br>`'''L1`<br>`L2'''` | `` `L1``<br>``L2` `` | `"L1`<br>`L2"`<br>`'L1`<br>`L2'` |
@@ -41,9 +42,13 @@ This guide provides a side-by-side comparison of three of the most popular progr
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Arithmetic** | `**` (power), `//` (floor) | `**` (power) | `**` (power) |
-| **Comparison** | `==`, `is` (identity) | `==`, `===` (strict) | `==`, `===` (strict) |
-| **Logical** | `and`, `or`, `not` | `&&`, `\|\|`, `!` | `&&`, `\|\|`, `!` |
+| **Arithmetic** | `+ - * / % **` | `+ - * / % **` | `+ - * / % **` |
+| **Inc/Dec** | `x += 1` `x -= 1` | `++` `--` | `++` `--` |
+| **Comparison** | `< <= > >= == !=`<br>`1 < y <= 3`<br>`is` `is not` (identity) | `< <= > >= == !=`<br>`=== !==` (strict) | `< <= > >= == !=`<br>`=== !==` (strict) |
+| **Logical** | `and` `or` `not` | `&&` `\|\|` `!` | `&&` `\|\|` `!` |
+| **Bitwise** | `~` `\|` `&` `^` | `~` `\|` `&` `^` | `~` `\|` `&` `^` |
+| **Shift** | `<<` `>>` | `<<` `>>` | `<<` `>>` |
+| **String concat** | `+` `+=` | `+` `+=` | `.` `.=` |
 
 ## 5. Collections
 
