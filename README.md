@@ -274,8 +274,9 @@ do {
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Declaration** | `def func(a, b):` | `function func(a, b) {}` | `function func($a, $b) {}` |
-| **Arrow/Lambda** | `lambda a, b: a + b` | `(a, b) => a + b` | `fn($a, $b) => $a + $b` |
+| **Declaration** | def&nbsp;sub(a,&nbsp;b=0):<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a&nbsp;-&nbsp;b | function&nbsp;sub(a,&nbsp;b=0)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a&nbsp;-&nbsp;b;<br>} | function&nbsp;sub(\$a,&nbsp;\$b=0)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;\$a&nbsp;-&nbsp;\$b;<br>} |
+| **Named args** | sub(b=2,&nbsp;a=1) | - | sub(b:&nbsp;2,&nbsp;a:&nbsp;1) |
+| **Arrow /<br>Lambda** | lambda:&nbsp;print('Hi')<br>lambda&nbsp;a:&nbsp;a**2<br>lambda&nbsp;a,&nbsp;b:&nbsp;a&nbsp;-&nbsp;b | ()&nbsp;=>&nbsp;console.log('Hi')<br>a&nbsp;=>&nbsp;a**2<br>(a,&nbsp;b)&nbsp;=>&nbsp;a&nbsp;-&nbsp;b | fn()&nbsp;=>&nbsp;echo&nbsp;'Hi'<br>fn(\$a)&nbsp;=>&nbsp;\$a**2<br>fn(\$a,&nbsp;\$b)&nbsp;=>&nbsp;\$a&nbsp;-&nbsp;\$b |
 
 ## 8. Classes and OOP
 
