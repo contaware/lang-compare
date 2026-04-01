@@ -48,7 +48,13 @@ This guide provides a side-by-side comparison of three of the most popular progr
 | **Logical** | `and` `or` `not` | `&&` `\|\|` `!` | `&&` `\|\|` `!` |
 | **Bitwise** | `~` `\|` `&` `^` | `~` `\|` `&` `^` | `~` `\|` `&` `^` |
 | **Shift** | `<<` `>>` | `<<` `>>` | `<<` `>>` |
+| **Ternary** | `x if cond else y` | `cond ? x : y` | `cond ? x : y` |
+| **null<br>coalescing** | - | `val ?? 'default'` | `$val ?? 'default'` |
 | **String concat** | `+` `+=` | `+` `+=` | `.` `.=` |
+
+- In JavaScript the null coalescing operator can be seen as `val !== null && val !== undefined ? val : 'default'`. As opposed to PHP, in JavaScript an exception is thrown if the tested variable has not been defined/declared.
+- In PHP the null coalescing operator can be seen as `isset($val) ? $val : 'default'`.
+
 
 ## 5. Collections
 
@@ -65,8 +71,8 @@ This guide provides a side-by-side comparison of three of the most popular progr
 
 - **Python tuples**: they are immutable lists.
 - **PHP arrays**: there is only one type, indexed arrays are associative arrays with integer keys. Arrays in PHP are assigned and passed **by value**.
-- **Javascript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps are optimized for iteration.
-- **Sets**: in Python the insertion order is **not** preserved, whereas in javascript it is.
+- **JavaScript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps are optimized for iteration.
+- **Sets**: in Python the insertion order is **not** preserved, whereas in JavaScript it is.
 
 ## 6. Control Flow and Loops
 
