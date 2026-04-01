@@ -65,15 +65,210 @@ This guide provides a side-by-side comparison of three of the most popular progr
 
 - **Python tuples**: they are immutable lists.
 - **PHP arrays**: there is only one type, indexed arrays are associative arrays with integer keys. Arrays in PHP are assigned and passed **by value**.
-- **Javascript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps support more iteration methods. 
-- **Sets**: in Python the insertion order is **not** preserved, while in javascript it is preserved.
+- **Javascript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps are optimized for iteration.
+- **Sets**: in Python the insertion order is **not** preserved, whereas in javascript it is.
 
 ## 6. Control Flow and Loops
 
-| **Key Points** | **Python** | **JavaScript** | **PHP** | 
-| :--- | :--- | :--- | :--- |
-| **If / Else** | `if / elif / else` | `if / else if / else` | `if / elseif / else` |
-| **Looping** | `for item in items:` | `for (let item of items) {}` | `foreach ($items as $item) {}` |
+### if / else
+
+#### Python
+
+```py
+if x > 1:
+    ..
+elif x == 1:
+    ..
+else:
+    ..
+```
+
+#### JavaScript
+
+```js
+if (x > 1) {
+    ..
+} else if (x === 1) {
+    ..
+} else {
+    ..
+}
+```
+
+#### PHP
+
+```php
+if ($x > 1) {
+    ..
+} elseif ($x === 1) {
+    ..
+} else {
+    ..
+}
+```
+
+### switch / match
+
+#### Python
+
+```py
+match x:
+    case 1:
+        ..
+    case 2:
+        ..
+    case _: # default
+        ..
+```
+
+#### JavaScript
+
+```js
+switch (x) {
+    case 1:
+        ..
+        break;
+    case 2:
+        ..
+        break;
+    default:
+        ..
+}
+```
+
+#### PHP
+
+```php
+switch ($x) {
+    case 1:
+        ..
+        break;
+    case 2:
+        ..
+        break;
+    default:
+        ..
+}
+```
+
+### for
+
+#### Python
+
+```py
+# Loop over collections
+# Note: for dict it iterates over keys
+for item in items:
+    ..
+
+# Loop over dict values
+for v in dict.values():
+    ..
+
+# Loop over dict key-values
+for k, v in dict.items():
+    ..
+```
+
+#### JavaScript
+
+```js
+// Traditional loop
+for (let i = 0; i < len; i++) {
+    ..
+}
+
+// Loop over iterables
+for (const item of items) {
+    ..
+}
+items.forEach((item, idx) => {
+    ..
+});
+for (const [k, v] of map) {
+    ..
+}
+
+// Loop over objects 
+// (must be converted to become iterable)
+for (const [k, v] of Object.entries(obj)) {
+    ..
+}
+```
+
+**Only use `for...in` to debug** objects because it loops over the entire prototype chain returning also inherited properties:
+
+```js
+for (const k in obj) {
+    ..
+}
+```
+
+#### PHP
+
+```php
+// Traditional loop
+for ($i = 0; $i < $len; $i++) {
+    ..
+}
+
+// Loop over arrays
+foreach ($arr as $v) { 
+    ..
+}
+foreach ($arr as $k => $v) { 
+    ..
+}
+```
+
+### while
+
+Use `break` to break out of the loop and `continue` to jump to the condition.
+
+#### Python
+
+```py
+while x > 1:
+    ..
+```
+
+#### JavaScript
+
+```js
+while (x > 1) {
+    ..
+}
+```
+
+#### PHP
+
+```php
+while ($x > 1) {
+    ..
+}
+```
+
+### do / while
+
+Use `break` to break out of the loop and `continue` to jump to the condition.
+
+Python does not support this loop type.
+
+#### JavaScript
+
+```js
+do {
+    ..
+} while (x < 10);
+```
+
+#### PHP
+
+```php
+do {
+    ..
+} while ($x < 10);
+```
 
 ## 7. Functions
 
