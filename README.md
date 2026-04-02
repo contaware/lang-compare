@@ -1,6 +1,43 @@
-# Python vs JavaScript vs PHP: Syntax Comparison
+# Python vs JavaScript vs PHP: Smart Comparison <!-- omit from toc -->
 
 This guide provides a side-by-side comparison of three of the most popular programming languages.
+
+
+## Table of contents <!-- omit from toc -->
+
+- [1. Basics](#1-basics)
+- [2. Variables, Constants and Data Types](#2-variables-constants-and-data-types)
+- [3. Strings](#3-strings)
+- [4. Operators](#4-operators)
+- [5. Collections](#5-collections)
+- [6. Control Flow, Loops and Exceptions](#6-control-flow-loops-and-exceptions)
+  - [if / else](#if--else)
+    - [Python](#python)
+    - [JavaScript](#javascript)
+    - [PHP](#php)
+  - [switch / match](#switch--match)
+    - [Python](#python-1)
+    - [JavaScript](#javascript-1)
+    - [PHP](#php-1)
+  - [for](#for)
+    - [Python](#python-2)
+    - [JavaScript](#javascript-2)
+    - [PHP](#php-2)
+  - [while](#while)
+    - [Python](#python-3)
+    - [JavaScript](#javascript-3)
+    - [PHP](#php-3)
+  - [do / while](#do--while)
+    - [JavaScript](#javascript-4)
+    - [PHP](#php-4)
+  - [Exceptions](#exceptions)
+    - [Python](#python-4)
+    - [JavaScript](#javascript-5)
+    - [PHP](#php-5)
+- [7. Functions](#7-functions)
+- [8. Classes and OOP](#8-classes-and-oop)
+- [9. Package Managers](#9-package-managers)
+
 
 ## 1. Basics
 
@@ -74,7 +111,7 @@ This guide provides a side-by-side comparison of three of the most popular progr
 - **JavaScript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps are optimized for iteration.
 - **Sets**: in Python the insertion order is **not** preserved, whereas in JavaScript it is.
 
-## 6. Control Flow and Loops
+## 6. Control Flow, Loops and Exceptions
 
 ### if / else
 
@@ -274,6 +311,57 @@ do {
 do {
     ..
 } while ($x < 10);
+```
+
+### Exceptions
+
+#### Python
+
+```py
+try:
+    raise Exception("Bad")
+except ZeroDivisionError:
+    print("You are dividing by zero")
+except Exception as e:
+    print(e)
+else:
+    print("Runs if no exception")
+finally:
+    print("Runs always")
+```
+- Note: the `else` statement is something special that not many languages support.
+
+#### JavaScript
+
+```js
+try {
+    throw new EvalError("Bad");
+} catch (e) {
+    if (e instanceof EvalError) {
+        console.log(`In EvalError '${e}'`);
+    } else if (e instanceof Error) {
+        console.log(`In Error '${e}'`);
+    } else {
+        throw e; // re-throw
+    }
+} finally {
+    console.log("Runs always");
+}
+```
+- Note: JavaScript does not support multiple `catch` blocks.
+
+#### PHP
+
+```php
+try {
+    throw new Error("Bad");
+} catch (Exception $e) {
+    echo "$e\n";
+} catch (Error $e) {
+    echo "$e\n";
+} finally {
+    echo "Runs always\n";
+}
 ```
 
 ## 7. Functions
