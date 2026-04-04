@@ -1,6 +1,6 @@
-# Python vs JavaScript vs PHP: Smart Comparison <!-- omit from toc -->
+# Python vs JavaScript vs PHP <!-- omit from toc -->
 
-This guide provides a side-by-side comparison of three of the most popular programming languages.
+This guide provides a side-by-side comparison of popular programming languages.
 
 
 ## Table of contents <!-- omit from toc -->
