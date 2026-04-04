@@ -63,7 +63,7 @@ This guide provides a side-by-side comparison of three of the most popular progr
 | **Test type** | `if type(num) is int:`<br>`if type(flt) is float:`<br>`if type(flag) is bool:` | `if (typeof num === "number")`<br>`if (typeof flt === "number")`<br>`if (typeof flag === "boolean")`<br>Note: in JS int and float are both of `number` type. | `if (is_int($num))`<br>`if (is_float($flt))`<br>`if (is_bool($flag))` |
 | **Print type** | `print(type(num))` | `console.log(typeof num)` | `var_dump($num)` |
 | **Missing** | `None` is intentional absence. | `null` is intentional absence.<br>`undefined` means uninitialized. | `null` is intentional absence. |
-| **Test defined** | `if 'val' in locals():` | `if (typeof val !== "undefined")` | `if (isset($val))`<br>Note: tests whether defined and not null. |
+| **Test defined** | `if 'val' in locals():` | `if (typeof val !== "undefined")` | `if (isset($val))`<br>(tests whether defined and not null) |
 
 ## 3. Strings
 
@@ -81,16 +81,21 @@ This guide provides a side-by-side comparison of three of the most popular progr
 | :--- | :--- | :--- | :--- |
 | **Arithmetic** | `+ - * / % **` | `+ - * / % **` | `+ - * / % **` |
 | **Inc/Dec** | `x += 1` `x -= 1` | `++` `--` | `++` `--` |
-| **Comparison** | `< <= > >= == !=`<br>`1 < y <= 3`<br>`is` `is not` (identity) | `< <= > >= == !=`<br>`=== !==` (strict) | `< <= > >= == !=`<br>`=== !==` (strict) |
+| **Loose<br>comparison** | `< <= > >= == !=`<br>`1 < y <= 3` | `< <= > >= == !=` | `< <= > >= == !=` |
+| **Strict<br>comparison** | - | `=== !==` | `=== !==` |
 | **Logical** | `and` `or` `not` | `&&` `\|\|` `!` | `&&` `\|\|` `!` |
 | **Bitwise** | `~` `\|` `&` `^` | `~` `\|` `&` `^` | `~` `\|` `&` `^` |
 | **Shift** | `<<` `>>` | `<<` `>>` | `<<` `>>` |
 | **Ternary** | `x if cond else y` | `cond ? x : y` | `cond ? x : y` |
-| **null<br>coalescing** | - | `val ?? 'default'` | `$val ?? 'default'` |
-| **String concat** | `+` `+=` | `+` `+=` | `.` `.=` |
+| **Null<br>coalescing** | - | `val ?? 'default'` | `$val ?? 'default'` |
+| **Chaining** | `obj.prop` | `obj.prop`<br>`obj?.prop` | `$obj->prop`<br>`$obj?->prop` |
+| **String<br>concat** | `+` | `+` | `.` |
 
+- Operators with two operands, often have a corresponding compound assignment operator that combines operation and assignment in a single step (`+=`, `-=`, `*=`, `/=`, ...).
 - In JavaScript the null coalescing operator can be seen as `val !== null && val !== undefined ? val : 'default'`. As opposed to PHP, in JavaScript an exception is thrown if the tested variable has not been defined/declared.
 - In PHP the null coalescing operator can be seen as `isset($val) ? $val : 'default'`.
+- In JavaScript the optional chaining operator `?.` silently returns `undefined` when the left side is nullish (`undefined` or `null`).
+- In PHP the null-safe operator `?->` silently returns `null` when the left side evaluates to `null`.
 
 
 ## 5. Collections
@@ -98,15 +103,17 @@ This guide provides a side-by-side comparison of three of the most popular progr
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
 | **Indexed array** | `list = [0, 1]`<br>`tuple = (0, 1)` | `let arr = [0, 1]` | `$arr = [0, 1]` |
-| **Associative array<br>(unique keys)** | `dict = {'k1': 'v1', 'k2': 2}` | `let map = new Map([['k1', 'v1'], ['k2', 2]])`<br>`let obj = {'k1': 'v1', 'k2': 2}` | `$arr = ['k1' => 'v2', 'k2' => 2]` |
+| **Associative array<br>(unique keys)** | `dict = {'k1': 'v1', 'k2': 2}` | `let map = new Map([['k1', 'v1'], ['k2', 2]])`<br>`let obj = {k1: 'v1', k2: 2}` | `$arr = ['k1' => 'v2', 'k2' => 2]` |
 | **Set<br>(unique values)** | `s = {'v1', 2}` | `let s = new Set(['v1', 2])` | - |
 | **Size** | `len(collection)` | `arr.length`<br>`map.size` | `count($arr)` |
 | **Read** | `list[index]`<br>`tuple[index]`<br>`dict['k1']` | `arr[index]`<br>`map.get('k1')`<br>`obj['k1']` | `$arr[index]`<br>`$arr['k1']` |
 | **Add** | `list.append(2)`<br>`dict['k3'] = 3` | `arr.push(2)`<br>`map.set('k3', 3)`<br>`obj['k3'] = 3` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
 | **Del** | `list.pop(index)`<br>`dict.pop('k3')` | `arr.pop()`<br>`map.delete('k3')`<br>`delete obj['k3']` | `array_pop($arr)`<br>`unset($arr['k1'])` |
 | **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`map.has('k1')` | `in_array('v2', $arr)`<br>`array_key_exists('k1', $arr)`|
+| **Unpack or<br>Destructure** | `[x, y] = list`<br>`[x, y] = dict.values()` | `const [x, y] = arr`<br>`const {k1, k2} = obj` | `[$x, $y] = $arr`<br>`['k1' => $x, 'k2' => $y] = $arr` |
+| **Splat or<br>Spread** | Both sides:<br>`[0, 1, *list]`<br>Right side:<br>`{'k': 'v', **dict}` | Both sides:<br>`[0, 1, ...arr]`<br>Right side:<br>`{k: 'v', ...obj}`<br>Left side:<br>`const {k1, ...obj}` | Right side:<br>`[0, 1, ...$arr]`<br>`['k': 'v', ...$arr]` |
 
-- **Python tuples**: they are immutable lists.
+- **Python tuples**: they are immutable lists. For tuples the parentheses can be omitted when there is no ambiguity.
 - **PHP arrays**: there is only one type, indexed arrays are associative arrays with integer keys. Arrays in PHP are assigned and passed **by value**.
 - **JavaScript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps are optimized for iteration.
 - **Sets**: in Python the insertion order is **not** preserved, whereas in JavaScript it is.
