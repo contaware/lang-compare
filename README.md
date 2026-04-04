@@ -382,5 +382,11 @@ try {
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **CLI Tool** | `pip` | `npm` | `composer` |
-| **Config File** | `requirements.txt` | `package.json` | `composer.json` |
+| **Install<br>location** | *Global* | `./node_modules/` | `./vendor/` |
+| **Config file(s)** | `requirements.txt` | `package.json` | `composer.json`<br>`composer.lock` |
+| **Init** | *Config file created manually* | `npm init` | *Config file created automatically* |
+| **Install from<br>Config file(s)** | `pip install -r requirements.txt` | `npm install` | `composer install` |
+| **Install <pkg>** | `pip install <pkg>` | `npm install <pkg>` | `composer require <pkg>` |
+| **List outdated** | `pip list --outdated` | `npm outdated` | `composer outdated` |
+| **Update** | `pip install --upgrade <pkg>` | `npm update <pkg>` | `composer update <pkg>` |
+| **Delete** | `pip uninstall <pkg>` | `npm uninstall <pkg>` | `composer remove <pkg>` |
