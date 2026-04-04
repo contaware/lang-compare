@@ -35,8 +35,7 @@ This guide provides a side-by-side comparison of three of the most popular progr
     - [JavaScript](#javascript-5)
     - [PHP](#php-5)
 - [7. Functions](#7-functions)
-- [8. Classes and OOP](#8-classes-and-oop)
-- [9. Package Managers](#9-package-managers)
+- [8. Package Managers](#8-package-managers)
 
 
 ## 1. Basics
@@ -379,14 +378,7 @@ try {
 | **Named args** | sub(b=2,&nbsp;a=1) | - | sub(b:&nbsp;2,&nbsp;a:&nbsp;1) |
 | **Arrow /<br>Lambda** | lambda:&nbsp;print('Hi')<br>lambda&nbsp;a:&nbsp;a**2<br>lambda&nbsp;a,&nbsp;b:&nbsp;a&nbsp;-&nbsp;b | ()&nbsp;=>&nbsp;console.log('Hi')<br>a&nbsp;=>&nbsp;a**2<br>(a,&nbsp;b)&nbsp;=>&nbsp;a&nbsp;-&nbsp;b | fn()&nbsp;=>&nbsp;echo&nbsp;'Hi'<br>fn(\$a)&nbsp;=>&nbsp;\$a**2<br>fn(\$a,&nbsp;\$b)&nbsp;=>&nbsp;\$a&nbsp;-&nbsp;\$b |
 
-## 8. Classes and OOP
-
-| **Key Points** | **Python** | **JavaScript** | **PHP** | 
-| :--- | :--- | :--- | :--- |
-| **Constructor** | `def __init__(self, n):` | `constructor(n) {}` | `public function __construct($n)` |
-| **This/Self** | `self` | `this` | `$this` |
-
-## 9. Package Managers
+## 8. Package Managers
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
