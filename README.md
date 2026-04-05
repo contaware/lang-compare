@@ -109,6 +109,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Add** | `list.append(2)`<br>`dict['k3'] = 3` | `arr.push(2)`<br>`map.set('k3', 3)`<br>`obj['k3'] = 3` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
 | **Del** | `list.pop(index)`<br>`dict.pop('k3')` | `arr.pop()`<br>`map.delete('k3')`<br>`delete obj['k3']` | `array_pop($arr)`<br>`unset($arr['k1'])` |
 | **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`map.has('k1')` | `in_array('v2', $arr)`<br>`array_key_exists('k1', $arr)`|
+| **Get keys<br>and values** | `dict.keys()`<br>`dict.values()`<br>`dict.items()` | `map.keys()`<br>`map.values()`<br>`map.entries()`<br>`Object.keys(obj)`<br>`Object.values(obj)`<br>`Object.entries(obj)` | `array_keys($arr)`<br>`array_values($arr)` |
 | **Unpack or<br>Destructure** | `[x, y] = list`<br>`[x, y] = dict.values()` | `const [x, y] = arr`<br>`const {k1, k2} = obj` | `[$x, $y] = $arr`<br>`['k1' => $x, 'k2' => $y] = $arr` |
 | **Splat or<br>Spread** | Both sides:<br>`[0, 1, *list]`<br>Right side:<br>`{'k': 'v', **dict}` | Both sides:<br>`[0, 1, ...arr]`<br>Right side:<br>`{k: 'v', ...obj}`<br>Left side:<br>`const {k1, ...obj}` | Right side:<br>`[0, 1, ...$arr]`<br>`['k': 'v', ...$arr]` |
 
