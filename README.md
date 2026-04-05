@@ -383,10 +383,9 @@ try {
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Install<br>location** | *Global* | `./node_modules/` | `./vendor/` |
-| **Config file(s)** | `requirements.txt` | `package.json`<br>`package-lock.json` | `composer.json`<br>`composer.lock` |
-| **Init** | *Config file created manually* | `npm init` | *Config file created automatically* |
-| **Install from<br>Config file(s)** | `pip install -r requirements.txt` | `npm ci` | `composer install` |
+| **Install<br>location** | Global | `./node_modules/` | `./vendor/` |
+| **Config files** | `requirements.txt`<br>maintained manually:<br>`pip freeze > requirements.txt` | `package.json`<br>`package-lock.json`<br>created with:<br>`npm init -y`<br>then maintained automatically. | `composer.json`<br>`composer.lock`<br>created and maintained automatically. |
+| **Install from<br>Config files** | `pip install -r requirements.txt` | `npm ci` | `composer install` |
 | **Install <pkg>** | `pip install <pkg>` | `npm install <pkg>` | `composer require <pkg>` |
 | **List outdated** | `pip list --outdated` | `npm outdated` | `composer outdated` |
 | **Update** | `pip install --upgrade <pkg>` | `npm update <pkg>` | `composer update <pkg>` |
