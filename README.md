@@ -105,7 +105,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Associative array<br>(unique keys)** | `dict = {'k1': 'v1', 'k2': 2}` | `let map = new Map([['k1', 'v1'], ['k2', 2]])`<br>`let obj = {k1: 'v1', k2: 2}` | `$arr = ['k1' => 'v2', 'k2' => 2]` |
 | **Set<br>(unique values)** | `s = {'v1', 2}` | `let s = new Set(['v1', 2])` | - |
 | **Size** | `len(collection)` | `arr.length`<br>`map.size` | `count($arr)` |
-| **Read** | `list[index]`<br>`tuple[index]`<br>`dict['k1']` | `arr[index]`<br>`map.get('k1')`<br>`obj['k1']` | `$arr[index]`<br>`$arr['k1']` |
+| **Read** | `list[index]`<br>`tuple[index]`<br>`dict['k1']` | `arr[index]`<br>`map.get('k1')`<br>`obj['k1']`<br>`obj.k1` | `$arr[index]`<br>`$arr['k1']` |
 | **Add** | `list.append(2)`<br>`dict['k3'] = 3` | `arr.push(2)`<br>`map.set('k3', 3)`<br>`obj['k3'] = 3` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
 | **Del** | `list.pop(index)`<br>`dict.pop('k3')` | `arr.pop()`<br>`map.delete('k3')`<br>`delete obj['k3']` | `array_pop($arr)`<br>`unset($arr['k1'])` |
 | **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`map.has('k1')` | `in_array('v2', $arr)`<br>`array_key_exists('k1', $arr)`|
