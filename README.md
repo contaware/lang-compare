@@ -380,6 +380,15 @@ try {
 | **Read/write<br>global var** | Needed for write:<br>`global g` | Declaration defines scope | Always needed:<br>`global $g` |
 | **Arrow /<br>Lambda** | lambda:&nbsp;print('Hi')<br>lambda&nbsp;a:&nbsp;a**2<br>lambda&nbsp;a,&nbsp;b:&nbsp;a&nbsp;-&nbsp;b | ()&nbsp;=>&nbsp;console.log('Hi')<br>a&nbsp;=>&nbsp;a**2<br>(a,&nbsp;b)&nbsp;=>&nbsp;a&nbsp;-&nbsp;b | fn()&nbsp;=>&nbsp;echo&nbsp;'Hi'<br>fn(\$a)&nbsp;=>&nbsp;\$a**2<br>fn(\$a,&nbsp;\$b)&nbsp;=>&nbsp;\$a&nbsp;-&nbsp;\$b |
 
+JavaScript supports multiple statements in **arrow** functions:
+
+```js
+const sub = (a, b) => {
+    console.log('Hi!');   
+    return a - b;
+}
+```
+
 ## 8. Package Managers
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
