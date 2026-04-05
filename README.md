@@ -47,7 +47,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Whitespaces & indentation** | Whitespaces meaningful, code blocks are defined by indentation. Common is 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 2 or 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 4 spaces for indentation. |
 | **Statement separator** | Semicolon, optional at end of line. | Semicolon, optional at end of line. | Semicolon, can only be omitted when preceding `?>` |
 | **Case sensitivity** | Fully sensitive | Fully sensitive | **Sensitive**: variables, properties, constants and array indexes.<br>**Insensitive**: functions, methods, classes, namespaces and keywords. |
-| **General naming convention** | Preferred is snake_case | Preferred is camelCase | Mixed snake_case and camelCase |
+| **General naming convention** | snake_case | camelCase | snake_case<br>camelCase |
 | **Classes naming convention** | PascalCase | PascalCase | PascalCase |
 | **Constants naming convention** | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE |
 | **Output** | `print("With newline")`<br>`print("No newline", end="")` | `console.log("With newline")` | `echo "Hi", "\n"` |
