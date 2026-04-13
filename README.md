@@ -62,7 +62,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Test type** | `if type(num) is int:`<br>`if type(flt) is float:`<br>`if type(flag) is bool:` | `if (typeof num === "number")`<br>`if (typeof flt === "number")`<br>`if (typeof flag === "boolean")`<br>Note: in JS int and float are both of `number` type. | `if (is_int($num))`<br>`if (is_float($flt))`<br>`if (is_bool($flag))` |
 | **Print type** | `print(type(num))` | `console.log(typeof num)` | `var_dump($num)` |
 | **Missing** | `None` is intentional absence. | `null` is intentional absence.<br>`undefined` means uninitialized. | `null` is intentional absence. |
-| **Test defined** | `if 'val' in locals():` | `if (typeof val !== "undefined")` | `if (isset($val))`<br>(tests whether defined and not null) |
+| **Test defined** | `if "val" in locals():` | `if (typeof val !== "undefined")` | `if (isset($val))`<br>(tests whether defined and not null) |
 
 ## 3. Strings
 
