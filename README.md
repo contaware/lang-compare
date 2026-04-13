@@ -52,6 +52,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Constants naming convention** | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE |
 | **Output** | `print("With newline")`<br>`print("No newline", end="")` | `console.log("With newline")`<br>`document.write("Hi\n")` | `echo "Hi", "\n"` |
 
+
 ## 2. Variables, Constants and Data Types
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
@@ -64,6 +65,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Missing** | `None` is intentional absence. | `null` is intentional absence.<br>`undefined` means uninitialized. | `null` is intentional absence. |
 | **Test defined** | `if "val" in locals():` | `if (typeof val !== "undefined")` | `if (isset($val))`<br>(tests whether defined and not null) |
 
+
 ## 3. Strings
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
@@ -74,6 +76,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Multi-line** | `"""L1`<br>`L2"""`<br>`'''L1`<br>`L2'''` | `` `L1``<br>``L2` `` | `"L1`<br>`L2"`<br>`'L1`<br>`L2'` |
 | **Unicode** | Full support | `String` uses UTF-16 code units. APIs work on code units. For codepoints > U+FFFF, `length` returns 2. | APIs work on bytes. Use the `mb_*` functions to support UTF-8. |
 | **Common functions** | `len(s)`<br>`s.upper()`<br>`s.find(sub)`<br>`s.replace(old, new)` | `s.length`<br>`s.toUpperCase()`<br>`s.indexOf(sub)`<br>`s.replace(old, new)` | `strlen($s)`<br>`strtoupper($s)`<br>`strpos($s, $sub)`<br>`str_replace($old, $new, $s)` |
+
 
 ## 4. Operators
 
@@ -119,6 +122,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 - **PHP arrays**: there is only one type, indexed arrays are associative arrays with integer keys. Arrays in PHP are assigned and passed **by value**.
 - **JavaScript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps are optimized for iteration.
 - **Sets**: in Python the insertion order is **not** preserved, whereas in JavaScript it is.
+
 
 ## 6. Control Flow, Loops and Exceptions
 
@@ -373,6 +377,7 @@ try {
 }
 ```
 
+
 ## 7. Functions
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
@@ -390,6 +395,7 @@ const sub = (a, b) => {
     return a - b;
 }
 ```
+
 
 ## 8. Package Managers
 
