@@ -50,7 +50,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **General naming convention** | snake_case | camelCase | snake_case<br>camelCase |
 | **Classes naming convention** | PascalCase | PascalCase | PascalCase |
 | **Constants naming convention** | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE |
-| **Output** | `print("With newline")`<br>`print("No newline", end="")` | `console.log("With newline")` | `echo "Hi", "\n"` |
+| **Output** | `print("With newline")`<br>`print("No newline", end="")` | `console.log("With newline")`<br>`document.write("Hi\n")` | `echo "Hi", "\n"` |
 
 ## 2. Variables, Constants and Data Types
 
