@@ -91,6 +91,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **String<br>concat** | `+` | `+` | `.` |
 
 - Operators with two operands, often have a corresponding compound assignment operator that combines operation and assignment in a single step (`+=`, `-=`, `*=`, `/=`, ...).
+- The Python **comparison** operators are **almost strict** except for `1 == True` and `0 == False` which are `True`.
 - In JavaScript the null coalescing operator can be seen as `val !== null && val !== undefined ? val : 'default'`. As opposed to PHP, in JavaScript an exception is thrown if the tested variable has not been defined/declared.
 - In PHP the null coalescing operator can be seen as `isset($val) ? $val : 'default'`.
 - In JavaScript the optional chaining operator `?.` silently returns `undefined` when the left side is nullish (`undefined` or `null`).
