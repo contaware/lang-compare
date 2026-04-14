@@ -115,7 +115,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Del** | `mylist.pop(index)`<br>`mydict.pop('k3')`<br>`myset.remove("v2")` | `arr.pop()`<br>`mymap.delete('k3')`<br>`delete obj['k3']`<br>`myset.delete("v2")` | `array_pop($arr)`<br>`unset($arr['k1'])` |
 | **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`mymap.has('k1')`<br>`myset.has("v2")` | `in_array('v2', $arr)`<br>`array_key_exists('k1', $arr)`|
 | **Get keys<br>and values** | `mydict.keys()`<br>`mydict.values()`<br>`mydict.items()` | `mymap.keys()`<br>`mymap.values()`<br>`mymap.entries()`<br>`Object.keys(obj)`<br>`Object.values(obj)`<br>`Object.entries(obj)` | `array_keys($arr)`<br>`array_values($arr)` |
-| **Slice** | `mylist[start:end_exclusive]` | `arr.slice(start, end_exclusive)` | `array_slice($arr, $offset, $len)` |
+| **Slice** | `mylist[start:end_exclusive]` | `arr.slice(start, end_exclusive)` | `array_slice($arr, $offset, $mylen)` |
 | **Unpack or<br>Destructure** | `[x, y] = mylist`<br>`[x, y] = mydict.values()` | `const [x, y] = arr`<br>`const {k1, k2} = obj` | `[$x, $y] = $arr`<br>`['k1' => $x, 'k2' => $y] = $arr` |
 | **Splat or<br>Spread** | Both sides:<br>`[0, 1, *mylist]`<br>Right side:<br>`{'k': 'v', **mydict}` | Both sides:<br>`[0, 1, ...arr]`<br>Right side:<br>`{k: 'v', ...obj}`<br>Left side:<br>`const {k1, ...obj}` | Right side:<br>`[0, 1, ...$arr]`<br>`['k': 'v', ...$arr]` |
 
@@ -231,7 +231,7 @@ for k, v in mydict.items():
 
 ```js
 // Traditional loop
-for (let i = 0; i < len; i++) {
+for (let i = 0; i < mylen; i++) {
     ..
 }
 
@@ -265,7 +265,7 @@ for (const k in obj) {
 
 ```php
 // Traditional loop
-for ($i = 0; $i < $len; $i++) {
+for ($i = 0; $i < $mylen; $i++) {
     ..
 }
 
