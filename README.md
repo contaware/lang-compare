@@ -109,11 +109,11 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Indexed array** | `list = [0, 1]`<br>`tuple = (0, 1)` | `let arr = [0, 1]` | `$arr = [0, 1]` |
 | **Associative array<br>(unique keys)** | `dict = {'k1': 'v1', 'k2': 2}` | `let map = new Map([['k1', 'v1'], ['k2', 2]])`<br>`let obj = {k1: 'v1', k2: 2}` | `$arr = ['k1' => 'v2', 'k2' => 2]` |
 | **Set<br>(unique values)** | `s = {'v1', 2}` | `let s = new Set(['v1', 2])` | - |
-| **Size** | `len(collection)` | `arr.length`<br>`map.size` | `count($arr)` |
+| **Size** | `len(collection)` | `arr.length`<br>`map.size`<br>`s.size` | `count($arr)` |
 | **Read** | `list[index]`<br>`dict['k1']` | `arr[index]`<br>`map.get('k1')`<br>`obj['k1']`<br>`obj.k1` | `$arr[index]`<br>`$arr['k1']` |
-| **Add** | `list.append(2)`<br>`dict['k3'] = 3` | `arr.push(2)`<br>`map.set('k3', 3)`<br>`obj['k3'] = 3` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
-| **Del** | `list.pop(index)`<br>`dict.pop('k3')` | `arr.pop()`<br>`map.delete('k3')`<br>`delete obj['k3']` | `array_pop($arr)`<br>`unset($arr['k1'])` |
-| **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`map.has('k1')` | `in_array('v2', $arr)`<br>`array_key_exists('k1', $arr)`|
+| **Add** | `list.append(2)`<br>`dict['k3'] = 3`<br>`s.add("v2")` | `arr.push(2)`<br>`map.set('k3', 3)`<br>`obj['k3'] = 3`<br>`s.add("v2")` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
+| **Del** | `list.pop(index)`<br>`dict.pop('k3')`<br>`s.remove("v2")` | `arr.pop()`<br>`map.delete('k3')`<br>`delete obj['k3']`<br>`s.delete("v2")` | `array_pop($arr)`<br>`unset($arr['k1'])` |
+| **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`map.has('k1')`<br>`s.has("v2")` | `in_array('v2', $arr)`<br>`array_key_exists('k1', $arr)`|
 | **Get keys<br>and values** | `dict.keys()`<br>`dict.values()`<br>`dict.items()` | `map.keys()`<br>`map.values()`<br>`map.entries()`<br>`Object.keys(obj)`<br>`Object.values(obj)`<br>`Object.entries(obj)` | `array_keys($arr)`<br>`array_values($arr)` |
 | **Slice** | `list[start:end_exclusive]` | `arr.slice(start, end_exclusive)` | `array_slice($arr, $offset, $len)` |
 | **Unpack or<br>Destructure** | `[x, y] = list`<br>`[x, y] = dict.values()` | `const [x, y] = arr`<br>`const {k1, k2} = obj` | `[$x, $y] = $arr`<br>`['k1' => $x, 'k2' => $y] = $arr` |
