@@ -108,12 +108,12 @@ This guide provides a side-by-side comparison of popular programming languages.
 | :--- | :--- | :--- | :--- |
 | **Indexed array** | `mylist = [0, 1]`<br>`mytuple = (0, 1)` | `let arr = [0, 1]` | `$arr = [0, 1]` |
 | **Associative array<br>(unique keys)** | `mydict = {'k1': 'v1', 'k2': 2}` | `let mymap = new Map([['k1', 'v1'], ['k2', 2]])`<br>`let obj = {k1: 'v1', k2: 2}` | `$arr = ['k1' => 'v2', 'k2' => 2]` |
-| **Set<br>(unique values)** | `s = {'v1', 2}` | `let s = new Set(['v1', 2])` | - |
-| **Size** | `len(collection)` | `arr.length`<br>`mymap.size`<br>`s.size` | `count($arr)` |
+| **Set<br>(unique values)** | `myset = {'v1', 2}` | `let myset = new Set(['v1', 2])` | - |
+| **Size** | `len(collection)` | `arr.length`<br>`mymap.size`<br>`myset.size` | `count($arr)` |
 | **Read** | `mylist[index]`<br>`mydict['k1']` | `arr[index]`<br>`mymap.get('k1')`<br>`obj['k1']`<br>`obj.k1` | `$arr[index]`<br>`$arr['k1']` |
-| **Add** | `mylist.append(2)`<br>`mydict['k3'] = 3`<br>`s.add("v2")` | `arr.push(2)`<br>`mymap.set('k3', 3)`<br>`obj['k3'] = 3`<br>`s.add("v2")` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
-| **Del** | `mylist.pop(index)`<br>`mydict.pop('k3')`<br>`s.remove("v2")` | `arr.pop()`<br>`mymap.delete('k3')`<br>`delete obj['k3']`<br>`s.delete("v2")` | `array_pop($arr)`<br>`unset($arr['k1'])` |
-| **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`mymap.has('k1')`<br>`s.has("v2")` | `in_array('v2', $arr)`<br>`array_key_exists('k1', $arr)`|
+| **Add** | `mylist.append(2)`<br>`mydict['k3'] = 3`<br>`myset.add("v2")` | `arr.push(2)`<br>`mymap.set('k3', 3)`<br>`obj['k3'] = 3`<br>`myset.add("v2")` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
+| **Del** | `mylist.pop(index)`<br>`mydict.pop('k3')`<br>`myset.remove("v2")` | `arr.pop()`<br>`mymap.delete('k3')`<br>`delete obj['k3']`<br>`myset.delete("v2")` | `array_pop($arr)`<br>`unset($arr['k1'])` |
+| **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`mymap.has('k1')`<br>`myset.has("v2")` | `in_array('v2', $arr)`<br>`array_key_exists('k1', $arr)`|
 | **Get keys<br>and values** | `mydict.keys()`<br>`mydict.values()`<br>`mydict.items()` | `mymap.keys()`<br>`mymap.values()`<br>`mymap.entries()`<br>`Object.keys(obj)`<br>`Object.values(obj)`<br>`Object.entries(obj)` | `array_keys($arr)`<br>`array_values($arr)` |
 | **Slice** | `mylist[start:end_exclusive]` | `arr.slice(start, end_exclusive)` | `array_slice($arr, $offset, $len)` |
 | **Unpack or<br>Destructure** | `[x, y] = mylist`<br>`[x, y] = mydict.values()` | `const [x, y] = arr`<br>`const {k1, k2} = obj` | `[$x, $y] = $arr`<br>`['k1' => $x, 'k2' => $y] = $arr` |
