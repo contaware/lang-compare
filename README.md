@@ -156,6 +156,8 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Read/write<br>global var** | Needed for write:<br>`global g` | Declaration defines scope | Always needed:<br>`global $g` |
 | **Arrow /<br>Lambda** | `lambda: print('Hi')`<br>`lambda a: a**2`<br>`lambda a, b: a - b` | `() => console.log('Hi')`<br>`a => a**2`<br>`(a, b) => a - b` | `fn() => echo 'Hi'`<br>`fn($a) => $a**2`<br>`fn($a, $b) => $a - $b` |
 
+- Variables declared in Python or PHP functions have function scope unless `global` is used.
+- Variables declared in JavaScript functions with `let` or `const` have block scope, those declared with `var` have function scope, and the ones declared without `let`, `const` or `var` become global.
 - JavaScript supports multiple statements in **arrow** functions:  
 `(a, b) => {console.log('Hi!'); return a - b;}`
 
