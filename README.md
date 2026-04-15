@@ -12,17 +12,6 @@ This guide provides a side-by-side comparison of popular programming languages.
 - [5. Collections](#5-collections)
 - [6. Control Flow](#6-control-flow)
 - [7. Loops](#7-loops)
-  - [for](#for)
-    - [Python](#python)
-    - [JavaScript](#javascript)
-    - [PHP](#php)
-  - [while](#while)
-    - [Python](#python-1)
-    - [JavaScript](#javascript-1)
-    - [PHP](#php-1)
-  - [do / while](#do--while)
-    - [JavaScript](#javascript-2)
-    - [PHP](#php-2)
 - [8. Exceptions](#8-exceptions)
 - [9. Functions](#9-functions)
 - [10. Classes](#10-classes)
@@ -132,124 +121,17 @@ This guide provides a side-by-side comparison of popular programming languages.
 
 ## 7. Loops
 
-### for
+| **Key Points** | **Python** | **JavaScript** | **PHP** | 
+| :--- | :--- | :--- | :--- |
+| **while** | `while x > 1:` | `while (x > 1) {}` | `while ($x > 1) {}` |
+| **do / while** | `-` | `do {} while (x < 10);` | `do {} while ($x < 10);` |
+| **for** | `for i in range(mylen):` | `for (let i = 0; i < mylen; i++) {}` | `for ($i = 0; $i < $mylen; $i++) {}` |
+| **Loop<br>collection** | `for item in items:` | `for (const item of items) {}` | `foreach ($arr as $v) {}` |
+| **Loop<br>key-value** | `for k, v in mydict.items():` | `for (const [k, v] of mymap) {}`<br>`for (const [k, v] of Object.entries(obj)) {}` | `foreach ($arr as $k => $v) {}` |
 
-#### Python
+- Use `break` to break out of a loop and `continue` to jump to the condition.
+- In JavaScript to debug objects we can use `for (const k in obj) {}`. Note that it will loop over the entire prototype chain returning also inherited properties.
 
-```py
-# Loop over collections
-# Note: for dict it iterates over keys
-for item in items:
-    ..
-
-# Loop over dict values
-for v in mydict.values():
-    ..
-
-# Loop over dict key-values
-for k, v in mydict.items():
-    ..
-```
-
-#### JavaScript
-
-```js
-// Traditional loop
-for (let i = 0; i < mylen; i++) {
-    ..
-}
-
-// Loop over iterables
-for (const item of items) {
-    ..
-}
-items.forEach((item, idx) => {
-    ..
-});
-for (const [k, v] of mymap) {
-    ..
-}
-
-// Loop over objects 
-// (must be converted to become iterable)
-for (const [k, v] of Object.entries(obj)) {
-    ..
-}
-```
-
-**Only use `for...in` to debug** objects because it loops over the entire prototype chain returning also inherited properties:
-
-```js
-for (const k in obj) {
-    ..
-}
-```
-
-#### PHP
-
-```php
-// Traditional loop
-for ($i = 0; $i < $mylen; $i++) {
-    ..
-}
-
-// Loop over arrays
-foreach ($arr as $v) { 
-    ..
-}
-foreach ($arr as $k => $v) { 
-    ..
-}
-```
-
-### while
-
-Use `break` to break out of the loop and `continue` to jump to the condition.
-
-#### Python
-
-```py
-while x > 1:
-    ..
-```
-
-#### JavaScript
-
-```js
-while (x > 1) {
-    ..
-}
-```
-
-#### PHP
-
-```php
-while ($x > 1) {
-    ..
-}
-```
-
-### do / while
-
-Use `break` to break out of the loop and `continue` to jump to the condition.
-
-Python does not support this loop type.
-
-#### JavaScript
-
-```js
-do {
-    ..
-} while (x < 10);
-```
-
-#### PHP
-
-```php
-do {
-    ..
-} while ($x < 10);
-```
 
 ## 8. Exceptions
 
