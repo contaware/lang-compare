@@ -158,6 +158,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 
 - Variables declared in Python or PHP functions have function scope.
 - Variables declared in JavaScript functions with `let` or `const` have block scope, those declared with `var` have function scope, and the ones declared without `let`, `const` or `var` become global (or throw an error in strict mode).
+- Arrow/Lambda functions inherit variables from their parent scope (closures).
 - JavaScript supports multiple statements in **arrow** functions:  
 `(a, b) => {console.log('Hi!'); return a - b;}`
 
