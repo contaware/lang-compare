@@ -384,19 +384,14 @@ try {
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Declaration** | def&nbsp;sub(a,&nbsp;b=0):<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a&nbsp;-&nbsp;b | function&nbsp;sub(a,&nbsp;b=0)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;a&nbsp;-&nbsp;b;<br>} | function&nbsp;sub(\$a,&nbsp;\$b=0)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;\$a&nbsp;-&nbsp;\$b;<br>} |
-| **Named args** | sub(b=2,&nbsp;a=1) | - | sub(b:&nbsp;2,&nbsp;a:&nbsp;1) |
+| **Declaration** | `def sub(a, b=0):` | `function sub(a, b=0) {}` | `function sub($a, $b=0) {}` |
+| **return value** | `return a - b` | `return a - b` | `return $a - $b` |
+| **Named args** | `sub(b=2, a=1)` | - | `sub(b: 2, a: 1)` |
 | **Read/write<br>global var** | Needed for write:<br>`global g` | Declaration defines scope | Always needed:<br>`global $g` |
-| **Arrow /<br>Lambda** | lambda:&nbsp;print('Hi')<br>lambda&nbsp;a:&nbsp;a**2<br>lambda&nbsp;a,&nbsp;b:&nbsp;a&nbsp;-&nbsp;b | ()&nbsp;=>&nbsp;console.log('Hi')<br>a&nbsp;=>&nbsp;a**2<br>(a,&nbsp;b)&nbsp;=>&nbsp;a&nbsp;-&nbsp;b | fn()&nbsp;=>&nbsp;echo&nbsp;'Hi'<br>fn(\$a)&nbsp;=>&nbsp;\$a**2<br>fn(\$a,&nbsp;\$b)&nbsp;=>&nbsp;\$a&nbsp;-&nbsp;\$b |
+| **Arrow /<br>Lambda** | `lambda: print('Hi')`<br>`lambda a: a**2`<br>`lambda a, b: a - b` | `() => console.log('Hi')`<br>`a => a**2`<br>`(a, b) => a - b` | `fn() => echo 'Hi'`<br>`fn($a) => $a**2`<br>`fn($a, $b) => $a - $b` |
 
-JavaScript supports multiple statements in **arrow** functions:
-
-```js
-const sub = (a, b) => {
-    console.log('Hi!');   
-    return a - b;
-}
-```
+- JavaScript supports multiple statements in **arrow** functions:  
+`(a, b) => {console.log('Hi!'); return a - b;}`
 
 
 ## 8. Classes
