@@ -166,15 +166,17 @@ This guide provides a side-by-side comparison of popular programming languages.
 | :---- | :---- | :---- | :---- |
 | **Class<br>declaration** | `class C1:` | `class C1 {}` | `class C1 {}` |
 | **Constructor** | `def __init__(self, param):` | `constructor(param) {}` | `function __construct($param) {}` |
-| **Property<br>declaration** | **In constructor:**<br>`self.prop = param` | **In constructor:**<br>`this.prop = param` | **In class:**<br>`public $prop` |
+| **Property<br>declaration** | **In constructor:**<br>`self.prop = param` | **In constructor:**<br>`this.prop = param` | **In class:**<br>`public $prop = "default"` |
 | **Method<br>declaration** | `def method(self, param):` | `method(param) {}` | `function method($param) {}` |
-| **Access object<br>inside method** | `self` | `this` | `$this` |
+| **Static<br>member<br>declaration** | `cnt = 0`<br>`@staticmethod`<br>`def inc():` | `static cnt = 0`<br>`static inc() {}` | `static $cnt = 0`<br>`static function inc() {}` |
+| **Access member<br>inside method** | `self.prop`<br>`self.method(param)` | `this.prop`<br>`this.method(param)` | `$this->prop`<br>`$this->method($param)` |
 | **Instance** | `obj = C1("val")` | `let obj = new C1("val")` | `$obj = new C1("val")` |
-| **Member<br>access** | `obj.prop`<br>`obj.method(param)` | `obj.prop`<br>`obj.method(param)` | `$obj->prop`<br>`$obj->method($param)` |
+| **Access<br>member** | `obj.prop`<br>`obj.method(param)` | `obj.prop`<br>`obj.method(param)` | `$obj->prop`<br>`$obj->method($param)` |
+| **Access<br>static<br>member** | `C1.cnt`<br>`C1.inc()` | `C1.cnt`<br>`C1.inc()` | `C1::$cnt`<br>`C1::inc()` |
 | **Inheritance** | `class C2(C1):` | `class C2 extends C1 {}` | `class C2 extends C1 {}` |
 | **Call<br>parent** | `super().__init__(param)`<br>`super().method(param)` | `super(param)`<br>`super.method(param)` | `parent::__construct($param)`<br>`parent::method($param)` |
 
-- In Python the first parameter of any method holds the current object, by convention it is named `self`. When we call a method, we do not pass `self`.
+- In Python the first parameter of non-static methods holds the current object, by convention it is named `self`.
   
 
 ## 11. Package Managers
