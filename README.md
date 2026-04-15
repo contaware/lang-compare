@@ -10,7 +10,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 - [3. Strings](#3-strings)
 - [4. Operators](#4-operators)
 - [5. Collections](#5-collections)
-- [6. Control Flow, Loops and Exceptions](#6-control-flow-loops-and-exceptions)
+- [6. Control Flow and Loops](#6-control-flow-and-loops)
   - [if / else](#if--else)
     - [Python](#python)
     - [JavaScript](#javascript)
@@ -30,13 +30,10 @@ This guide provides a side-by-side comparison of popular programming languages.
   - [do / while](#do--while)
     - [JavaScript](#javascript-4)
     - [PHP](#php-4)
-  - [Exceptions](#exceptions)
-    - [Python](#python-4)
-    - [JavaScript](#javascript-5)
-    - [PHP](#php-5)
-- [7. Functions](#7-functions)
-- [8. Classes](#8-classes)
-- [9. Package Managers](#9-package-managers)
+- [7. Exceptions](#7-exceptions)
+- [8. Functions](#8-functions)
+- [9. Classes](#9-classes)
+- [10. Package Managers](#10-package-managers)
 
 
 ## 1. Basics
@@ -126,7 +123,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 - **Sets**: in Python the insertion order is **not** preserved, whereas in JavaScript it is.
 
 
-## 6. Control Flow, Loops and Exceptions
+## 6. Control Flow and Loops
 
 ### if / else
 
@@ -328,59 +325,20 @@ do {
 } while ($x < 10);
 ```
 
-### Exceptions
+## 7. Exceptions
 
-#### Python
+| **Key Points** | **Python** | **JavaScript** | **PHP** | 
+| :--- | :--- | :--- | :--- |
+| **Guarded<br>block** | `try:` | `try {}` | `try {}` |
+| **Trigger<br>exception** | `raise Exception("Bad")` | `throw new Error("Bad")` | `throw new Error("Bad")` |
+| **Handle<br>exception** | `except Exception as e:` | `catch (e) {}` | `catch (Error $e) {}` |
+| **Run if no exception** | `else:` | - | - |
+| **Run always** | `finally:` | `finally {}` | `finally {}` |
 
-```py
-try:
-    raise Exception("Bad")
-except ZeroDivisionError:
-    print("You are dividing by zero")
-except Exception as e:
-    print(e)
-else:
-    print("Runs if no exception")
-finally:
-    print("Runs always")
-```
-- Note: the `else` statement is something special that not many languages support.
-
-#### JavaScript
-
-```js
-try {
-    throw new EvalError("Bad");
-} catch (e) {
-    if (e instanceof EvalError) {
-        console.log(`In EvalError '${e}'`);
-    } else if (e instanceof Error) {
-        console.log(`In Error '${e}'`);
-    } else {
-        throw e; // re-throw
-    }
-} finally {
-    console.log("Runs always");
-}
-```
-- Note: JavaScript does not support multiple `catch` blocks.
-
-#### PHP
-
-```php
-try {
-    throw new Error("Bad");
-} catch (Exception $e) {
-    echo "$e\n";
-} catch (Error $e) {
-    echo "$e\n";
-} finally {
-    echo "Runs always\n";
-}
-```
+- JavaScript supports only one `catch (e)` block, inside that block we can distinguish the exception type with `e instanceof EvalError`.
 
 
-## 7. Functions
+## 8. Functions
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
@@ -394,7 +352,7 @@ try {
 `(a, b) => {console.log('Hi!'); return a - b;}`
 
 
-## 8. Classes
+## 9. Classes
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** |
 | :---- | :---- | :---- | :---- |
@@ -411,7 +369,7 @@ try {
 - In Python the first parameter of any method holds the current object, by convention it is named `self`. When we call a method, we do not pass `self`.
   
 
-## 9. Package Managers
+## 10. Package Managers
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
