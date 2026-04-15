@@ -35,7 +35,8 @@ This guide provides a side-by-side comparison of popular programming languages.
     - [JavaScript](#javascript-5)
     - [PHP](#php-5)
 - [7. Functions](#7-functions)
-- [8. Package Managers](#8-package-managers)
+- [8. Classes](#8-classes)
+- [9. Package Managers](#9-package-managers)
 
 
 ## 1. Basics
@@ -398,7 +399,24 @@ const sub = (a, b) => {
 ```
 
 
-## 8. Package Managers
+## 8. Classes
+
+| **Key Points** | **Python** | **JavaScript** | **PHP** |
+| :---- | :---- | :---- | :---- |
+| **Class<br>declaration** | `class C1:` | `class C1 {}` | `class C1 {}` |
+| **Constructor** | `def __init__(self, param):` | `constructor(param) {}` | `function __construct($param) {}` |
+| **Property<br>declaration** | **In constructor:**<br>`self.prop = param` | **In constructor:**<br>`this.prop = param` | **In class:**<br>`public $prop` |
+| **Method<br>declaration** | `def method(self, param):` | `method(param) {}` | `function method($param) {}` |
+| **Access object<br>inside method** | `self` | `this` | `$this` |
+| **Instance** | `obj = C1("val")` | `let obj = new C1("val")` | `$obj = new C1("val")` |
+| **Member<br>access** | `obj.prop`<br>`obj.method(param)` | `obj.prop`<br>`obj.method(param)` | `$obj->prop`<br>`$obj->method($param)` |
+| **Inheritance** | `class C2(C1):` | `class C2 extends C1 {}` | `class C2 extends C1 {}` |
+| **Call<br>parent** | `super().__init__(param)`<br>`super().method(param)` | `super(param)`<br>`super.method(param)` | `parent::__construct($param)`<br>`parent::method($param)` |
+
+- In Python the first parameter of any method holds the current object, by convention it is named `self`. When we call a method, we do not pass `self`.
+  
+
+## 9. Package Managers
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
