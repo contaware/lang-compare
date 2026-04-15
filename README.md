@@ -10,30 +10,23 @@ This guide provides a side-by-side comparison of popular programming languages.
 - [3. Strings](#3-strings)
 - [4. Operators](#4-operators)
 - [5. Collections](#5-collections)
-- [6. Control Flow and Loops](#6-control-flow-and-loops)
-  - [if / else](#if--else)
+- [6. Control Flow](#6-control-flow)
+- [7. Loops](#7-loops)
+  - [for](#for)
     - [Python](#python)
     - [JavaScript](#javascript)
     - [PHP](#php)
-  - [switch / match](#switch--match)
+  - [while](#while)
     - [Python](#python-1)
     - [JavaScript](#javascript-1)
     - [PHP](#php-1)
-  - [for](#for)
-    - [Python](#python-2)
+  - [do / while](#do--while)
     - [JavaScript](#javascript-2)
     - [PHP](#php-2)
-  - [while](#while)
-    - [Python](#python-3)
-    - [JavaScript](#javascript-3)
-    - [PHP](#php-3)
-  - [do / while](#do--while)
-    - [JavaScript](#javascript-4)
-    - [PHP](#php-4)
-- [7. Exceptions](#7-exceptions)
-- [8. Functions](#8-functions)
-- [9. Classes](#9-classes)
-- [10. Package Managers](#10-package-managers)
+- [8. Exceptions](#8-exceptions)
+- [9. Functions](#9-functions)
+- [10. Classes](#10-classes)
+- [11. Package Managers](#11-package-managers)
 
 
 ## 1. Basics
@@ -123,88 +116,21 @@ This guide provides a side-by-side comparison of popular programming languages.
 - **Sets**: in Python the insertion order is **not** preserved, whereas in JavaScript it is.
 
 
-## 6. Control Flow and Loops
+## 6. Control Flow
 
-### if / else
+| **Key Points** | **Python** | **JavaScript** | **PHP** | 
+| :--- | :--- | :--- | :--- |
+| **if** | `if x > 1:` | `if (x > 1) {}` | `if ($x > 1) {}` |
+| **else if** | `elif x == 1:` | `else if (x === 1) {}` | `elseif ($x === 1) {}` |
+| **else** | `else:` | `else {}` | `else {}` |
+| **switch** | `match x:` | `switch (x) {}` | `switch ($x) {}` |
+| **switch case** | `case 1:` | `case 1: .. break;` | `case 1: .. break;` |
+| **switch default** | `case _:` | `default:` | `default:` |
 
-#### Python
+- In Python each case is under its own block, while in JavaScript and PHP the cases are delimited by `break`.
 
-```py
-if x > 1:
-    ..
-elif x == 1:
-    ..
-else:
-    ..
-```
 
-#### JavaScript
-
-```js
-if (x > 1) {
-    ..
-} else if (x === 1) {
-    ..
-} else {
-    ..
-}
-```
-
-#### PHP
-
-```php
-if ($x > 1) {
-    ..
-} elseif ($x === 1) {
-    ..
-} else {
-    ..
-}
-```
-
-### switch / match
-
-#### Python
-
-```py
-match x:
-    case 1:
-        ..
-    case 2:
-        ..
-    case _: # default
-        ..
-```
-
-#### JavaScript
-
-```js
-switch (x) {
-    case 1:
-        ..
-        break;
-    case 2:
-        ..
-        break;
-    default:
-        ..
-}
-```
-
-#### PHP
-
-```php
-switch ($x) {
-    case 1:
-        ..
-        break;
-    case 2:
-        ..
-        break;
-    default:
-        ..
-}
-```
+## 7. Loops
 
 ### for
 
@@ -325,7 +251,7 @@ do {
 } while ($x < 10);
 ```
 
-## 7. Exceptions
+## 8. Exceptions
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
@@ -338,7 +264,7 @@ do {
 - JavaScript supports only one `catch (e)` block, inside that block we can distinguish the exception type with `e instanceof EvalError`.
 
 
-## 8. Functions
+## 9. Functions
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
@@ -352,7 +278,7 @@ do {
 `(a, b) => {console.log('Hi!'); return a - b;}`
 
 
-## 9. Classes
+## 10. Classes
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** |
 | :---- | :---- | :---- | :---- |
@@ -369,7 +295,7 @@ do {
 - In Python the first parameter of any method holds the current object, by convention it is named `self`. When we call a method, we do not pass `self`.
   
 
-## 10. Package Managers
+## 11. Package Managers
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
