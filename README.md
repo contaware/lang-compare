@@ -153,6 +153,8 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Declaration** | `def sub(a, b=0):` | `function sub(a, b=0) {}` | `function sub($a, $b=0) {}` |
 | **return value** | `return a - b` | `return a - b` | `return $a - $b` |
 | **Named args** | `sub(b=2, a=1)` | - | `sub(b: 2, a: 1)` |
+| **Varargs** | `def sum(*args):`<br>`def kv(**kwargs):` | `function sum(...args) {}` | `function sum(...$args) {}` |
+| **Extract args** | `sum(*mylist)`<br>`kv(**mydict)` | `sum(...arr)` | `sum(...$arr)` |
 | **Read/write<br>global var** | Needed for write:<br>`global g` | Declaration defines scope | Always needed:<br>`global $g` |
 | **Arrow /<br>Lambda** | `lambda: print('Hi')`<br>`lambda a: a**2`<br>`lambda a, b: a - b` | `() => console.log('Hi')`<br>`a => a**2`<br>`(a, b) => a - b` | `fn() => echo 'Hi'`<br>`fn($a) => $a**2`<br>`fn($a, $b) => $a - $b` |
 
