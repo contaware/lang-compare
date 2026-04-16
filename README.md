@@ -97,7 +97,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Get keys<br>and values** | `mydict.keys()`<br>`mydict.values()`<br>`mydict.items()` | `mymap.keys()`<br>`mymap.values()`<br>`mymap.entries()`<br>`Object.keys(obj)`<br>`Object.values(obj)`<br>`Object.entries(obj)` | `array_keys($arr)`<br>`array_values($arr)` |
 | **Slice** | `mylist[start:end_exclusive]` | `arr.slice(start, end_exclusive)` | `array_slice($arr, $offset, $mylen)` |
 | **Unpack or<br>Destructure** | `[x, y] = mylist`<br>`[x, y] = mydict.values()` | `const [x, y] = arr`<br>`const {k1, k2} = obj` | `[$x, $y] = $arr`<br>`['k1' => $x, 'k2' => $y] = $arr` |
-| **Extract /<br>Combine** | Both sides:<br>`[0, 1, *mylist]`<br>Right side:<br>`{'k': "v", **mydict}` | Both sides:<br>`[0, 1, ...arr]`<br>Right side:<br>`{k: "v", ...obj}`<br>Left side:<br>`const {k1, ...obj}` | Right side:<br>`[0, 1, ...$arr]`<br>`['k' => "v", ...$arr]` |
+| **Extract /<br>Combine** | Right side:<br>`[0, 1, *mylist]`<br>`{'k': "v", **mydict}`<br>Left side:<br>`[x, y, *mylist]` | Right side:<br>`[0, 1, ...arr]`<br>`{k: "v", ...obj}`<br>Left side:<br>`const [x, y, ...arr]`<br>`const {k1, k2, ...obj}` | Right side:<br>`[0, 1, ...$arr]`<br>`['k' => "v", ...$arr]` |
 
 - Python calls `*` and `**` the **splat operators**, JavaScript and PHP call `...` the **spread operator** (JavaScript names it **rest operator** when it combines values). We show them here on **right (extract)** and **left (combine)** side of an assignment. 
 - **Python tuples**: they are immutable lists. For tuples the parentheses can be omitted when there is no ambiguity.
