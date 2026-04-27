@@ -24,13 +24,13 @@ This guide provides a side-by-side comparison of popular programming languages.
 | :--- | :--- | :--- | :--- |
 | **Comments** | `#` | `//` `/* .. */` | `//` `#` `/* .. */` |
 | **Tags** | - | `<script>code</script>` | `<?php code ?>` <br> and <br>`<?= "echoed" ?>` |
-| **Whitespaces & indentation** | Whitespaces meaningful, code blocks are defined by indentation. Common is 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 2 or 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 4 spaces for indentation. |
+| **Whitespaces and indentation** | Whitespaces meaningful, code blocks are defined by indentation. Common is 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 2 or 4 spaces for indentation. | Whitespaces ignored, blocks defined by `{}`. Common is 4 spaces for indentation. |
 | **Statement separator** | Semicolon, optional at end of line. | Semicolon, optional at end of line. | Semicolon, can only be omitted when preceding `?>` |
 | **Case sensitivity** | Fully sensitive | Fully sensitive | **Sensitive**: variables, properties, constants and array indexes.<br>**Insensitive**: functions, methods, classes, namespaces and keywords. |
 | **General naming convention** | snake_case | camelCase | snake_case<br>camelCase |
 | **Classes naming convention** | PascalCase | PascalCase | PascalCase |
 | **Constants naming convention** | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE | SCREAMING_SNAKE_CASE |
-| **Output** | `print("With newline")`<br>`print("No newline", end="")` | `console.log("With newline")`<br>`document.write("Hi\n")` | `echo "Hi", "\n"` |
+| **Output** | `print("With newline")`<br>`print("No newline", end="")` | `console.log("With newline")`<br>`document.write("Hi\n")` | `echo "Hi\n"` |
 
 
 ## 2. Variables, Constants and Data Types
@@ -39,7 +39,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | :--- | :--- | :--- | :--- |
 | **Primitive datatypes** | **Immutable**<br>`num = 10`<br>`flt = 3.14`<br>`flag = True`<br>`name = "Bob"` | **Immutable**<br>`let num = 10`<br>`let flt = 3.14`<br>`let flag = true`<br>`let name = "Bob"` | **Mutable**<br>`$num = 10`<br>`$flt = 3.14`<br>`$flag = true`<br>`$name = "Bob"` |
 | **Constants** | `PI = 3.14` | `const PI = 3.14` | `const PI = 3.14`<br>`define('PI', 3.14)` |
-| **Cast** | `num = int("10")`<br>`flt = float("1.1")` | `let num = parseInt("10")`<br>`let flt = parseFloat("1.1")`<br> | `$num = (int)"10"`<br>`$flt = (float)"1.1"` |
+| **Cast** | `num = int("10")`<br>`flt = float("1.1")`<br>`flag = bool(1)` | `let num = parseInt("10")`<br>`let flt = parseFloat("1.1")`<br>`let flag = Boolean(1)` | `$num = (int)"10"`<br>`$flt = (float)"1.1"`<br>`$flag = (bool)1` |
 | **Test type** | `type(num) is int`<br>`type(flt) is float`<br>`type(flag) is bool` | `typeof num === "number"`<br>`typeof flt === "number"`<br>`typeof flag === "boolean"`<br>Note: in JS int and float are both of `number` type. | `is_int($num)`<br>`is_float($flt)`<br>`is_bool($flag)` |
 | **Print type** | `print(type(num))` | `console.log(typeof num)` | `var_dump($num)` |
 | **Missing** | `None` is intentional absence. | `null` is intentional absence.<br>`undefined` means uninitialized. | `null` is intentional absence. |
@@ -88,11 +88,11 @@ This guide provides a side-by-side comparison of popular programming languages.
 | :--- | :--- | :--- | :--- |
 | **Indexed array** | `mylist = [0, 1]`<br>`mytuple = (0, 1)` | `let arr = [0, 1]` | `$arr = [0, 1]` |
 | **Associative array<br>(unique keys)** | `mydict = {'k1': "v1", 'k2': 2}` | `let mymap = new Map([['k1', "v1"], ['k2', 2]])`<br>`let obj = {k1: "v1", k2: 2}` | `$arr = ['k1' => "v2", 'k2' => 2]` |
-| **Set<br>(unique values)** | `myset = {"v1", 2}` | `let myset = new Set(["v1", 2])` | - |
+| **Set<br>(unique values)** | `myset = {"v1", 2}`<br>(insertion order **not** preserved) | `let myset = new Set(["v1", 2])`<br>(insertion order preserved) | - |
 | **Size** | `len(collection)` | `arr.length`<br>`mymap.size`<br>`myset.size` | `count($arr)` |
 | **Read** | `mylist[index]`<br>`mydict['k1']` | `arr[index]`<br>`mymap.get('k1')`<br>`obj['k1']`<br>`obj.k1` | `$arr[index]`<br>`$arr['k1']` |
 | **Add** | `mylist.append(2)`<br>`mydict['k3'] = 3`<br>`myset.add("v2")` | `arr.push(2)`<br>`mymap.set('k3', 3)`<br>`obj['k3'] = 3`<br>`myset.add("v2")` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
-| **Del** | `mylist.pop(index)`<br>`mydict.pop('k3')`<br>`myset.remove("v2")` | `arr.pop()`<br>`mymap.delete('k3')`<br>`delete obj['k3']`<br>`myset.delete("v2")` | `array_pop($arr)`<br>`unset($arr['k1'])` |
+| **Del** | `mylist.pop()`<br>`mydict.pop('k3')`<br>`myset.remove("v2")` | `arr.pop()`<br>`mymap.delete('k3')`<br>`delete obj['k3']`<br>`myset.delete("v2")` | `array_pop($arr)`<br>`unset($arr['k1'])` |
 | **Check item** | `'k1' in collection` | `arr.includes(1)`<br>`mymap.has('k1')`<br>`myset.has("v2")` | `in_array("v2", $arr)`<br>`array_key_exists('k1', $arr)`|
 | **Get keys<br>and values** | `mydict.keys()`<br>`mydict.values()`<br>`mydict.items()` | `mymap.keys()`<br>`mymap.values()`<br>`mymap.entries()`<br>`Object.keys(obj)`<br>`Object.values(obj)`<br>`Object.entries(obj)` | `array_keys($arr)`<br>`array_values($arr)` |
 | **Slice** | `mylist[start:end_exclusive]` | `arr.slice(start, end_exclusive)` | `array_slice($arr, $offset, $mylen)` |
@@ -100,10 +100,10 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Spread<br>Rest<br>Splat** | Right side:<br>`[0, 1, *mylist]`<br>`{'k': "v", **mydict}`<br>Left side:<br>`[x, y, *mylist]` | Right side:<br>`[0, 1, ...arr]`<br>`{k: "v", ...obj}`<br>Left side:<br>`const [x, y, ...arr]`<br>`const {k1, k2, ...obj}` | Right side:<br>`[0, 1, ...$arr]`<br>`['k' => "v", ...$arr]` |
 
 - Python calls `*` and `**` the **splat operators**, JavaScript and PHP call `...` the **spread operator** (JavaScript names it **rest operator** when it combines values). We show them here on **right (extract)** and **left (combine)** side of an assignment. 
+- Although each language has its own logic regarding what constitutes a variable, the end result is that PHP arrays are assigned and passed **by value**, unlike Python and JavaScript, where all collection types are assigned and passed **by reference**.
 - **Python tuples**: they are immutable lists. For tuples the parentheses can be omitted when there is no ambiguity.
-- **PHP arrays**: there is only one type, indexed arrays are associative arrays with integer keys. Arrays in PHP are assigned and passed **by value**.
 - **JavaScript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps are optimized for iteration.
-- **Sets**: in Python the insertion order is **not** preserved, whereas in JavaScript it is.
+- **PHP arrays**: there is only one type, indexed arrays are associative arrays with integer keys.
 
 
 ## 6. Control Flow
