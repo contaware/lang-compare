@@ -15,7 +15,8 @@ This guide provides a side-by-side comparison of popular programming languages.
 - [8. Exceptions](#8-exceptions)
 - [9. Functions](#9-functions)
 - [10. Classes](#10-classes)
-- [11. Package Managers](#11-package-managers)
+- [11. Copy Variables](#11-copy-variables)
+- [12. Package Managers](#12-package-managers)
 
 
 ## 1. Basics
@@ -99,8 +100,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Unpack or<br>Destructure** | `[x, y] = mylist`<br>`[x, y] = mydict.values()` | `const [x, y] = arr`<br>`const {k1, k2} = obj` | `[$x, $y] = $arr`<br>`['k1' => $x, 'k2' => $y] = $arr` |
 | **Spread<br>Rest<br>Splat** | Right side:<br>`[0, 1, *mylist]`<br>`{'k': "v", **mydict}`<br>Left side:<br>`[x, y, *mylist]` | Right side:<br>`[0, 1, ...arr]`<br>`{k: "v", ...obj}`<br>Left side:<br>`const [x, y, ...arr]`<br>`const {k1, k2, ...obj}` | Right side:<br>`[0, 1, ...$arr]`<br>`['k' => "v", ...$arr]` |
 
-- Python calls `*` and `**` the **splat operators**, JavaScript and PHP call `...` the **spread operator** (JavaScript names it **rest operator** when it combines values). We show them here on **right (extract)** and **left (combine)** side of an assignment. 
-- Although each language has its own logic regarding what constitutes a variable, the end result is that PHP arrays are assigned and passed **by value**, unlike Python and JavaScript, where all collection types are assigned and passed **by reference**.
+- Python calls `*` and `**` the **splat operators**, JavaScript and PHP call `...` the **spread operator** (JavaScript names it **rest operator** when it combines values). We show them here on **right (extract)** and **left (combine)** side of an assignment.
 - **Python tuples**: they are immutable lists. For tuples the parentheses can be omitted when there is no ambiguity.
 - **JavaScript obj vs map**: objects only support strings as key, while maps support any value. Maps have a handy `size` property, but have to be accessed with the `get()` method. Objects are better for JSON serialization, while maps are optimized for iteration.
 - **PHP arrays**: there is only one type, indexed arrays are associative arrays with integer keys.
@@ -183,9 +183,23 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Call<br>parent** | `super().__init__(param)`<br>`super().method(param)` | `super(param)`<br>`super.method(param)` | `parent::__construct($param)`<br>`parent::method($param)` |
 
 - In Python the first parameter of non-static methods holds the current object, by convention it is named `self`.
-  
 
-## 11. Package Managers
+
+## 11. Copy Variables
+
+| **Key Points** | **Python** | **JavaScript** | **PHP** | 
+| :--- | :--- | :--- | :--- |
+| **Shallow copy** | `import copy`<br>`mylist2 = mylist.copy()`<br>`mydict2 = mydict.copy()`<br>`obj2 = copy.copy(obj)` | `const arr2 = [...arr]`<br>`const mymap2 = new Map(mymap)`<br>`const obj2 = {...obj}` | `$obj2 = clone $obj` |
+| **Deep copy** | `import copy`<br>`mylist2 = copy.deepcopy(mylist)`<br>`mydict2 = copy.deepcopy(mydict)`<br>`obj2 = copy.deepcopy(obj)` | `const arr2 = structuredClone(arr)`<br>`const mymap2 = structuredClone(mymap)`<br>`const obj2 = structuredClone(obj)` | `$obj2 = clone $obj`<br>(class must implement a `__clone()` that clones references) |
+
+- Although each language has its own logic regarding what constitutes a variable, the end result is:
+  - Python and JavaScript collections and objects are all assigned and passed **by reference**.
+  - PHP arrays are assigned and passed **by value**, even if nested. PHP objects are assigned and passed **by reference**.
+- A **shallow copy** copies references as such.
+- A **deep copy** clones what references refer to.
+
+
+## 12. Package Managers
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
