@@ -87,9 +87,9 @@ This guide provides a side-by-side comparison of popular programming languages.
 
 | **Key Points** | **Python** | **JavaScript** | **PHP** | 
 | :--- | :--- | :--- | :--- |
-| **Indexed array** | `mylist = [0, 1]`<br>`mytuple = (0, 1)` | `let arr = [0, 1]` | `$arr = [0, 1]` |
-| **Associative array<br>(unique keys)** | `mydict = {'k1': "v1", 'k2': 2}` | `let mymap = new Map([['k1', "v1"], ['k2', 2]])`<br>`let obj = {k1: "v1", k2: 2}` | `$arr = ['k1' => "v2", 'k2' => 2]` |
-| **Set<br>(unique values)** | `myset = {"v1", 2}`<br>(insertion order **not** preserved) | `let myset = new Set(["v1", 2])`<br>(insertion order preserved) | - |
+| **Indexed array** | `mylist = [0, 1]`<br>`mytuple = (0, 1)` | `const arr = [0, 1]` | `$arr = [0, 1]` |
+| **Associative array<br>(unique keys)** | `mydict = {'k1': "v1", 'k2': 2}` | `const mymap = new Map([['k1', "v1"], ['k2', 2]])`<br>`const obj = {k1: "v1", k2: 2}` | `$arr = ['k1' => "v2", 'k2' => 2]` |
+| **Set<br>(unique values)** | `myset = {"v1", 2}`<br>(insertion order **not** preserved) | `const myset = new Set(["v1", 2])`<br>(insertion order preserved) | - |
 | **Size** | `len(collection)` | `arr.length`<br>`mymap.size`<br>`myset.size` | `count($arr)` |
 | **Read** | `mylist[index]`<br>`mydict['k1']` | `arr[index]`<br>`mymap.get('k1')`<br>`obj['k1']`<br>`obj.k1` | `$arr[index]`<br>`$arr['k1']` |
 | **Add** | `mylist.append(2)`<br>`mydict['k3'] = 3`<br>`myset.add("v2")` | `arr.push(2)`<br>`mymap.set('k3', 3)`<br>`obj['k3'] = 3`<br>`myset.add("v2")` | `$arr[] = 2`<br>`$arr['k3'] = 3` |
