@@ -176,7 +176,7 @@ This guide provides a side-by-side comparison of popular programming languages.
 | **Method<br>declaration** | `def method(self, param):` | `method(param) {}` | `function method($param) {}` |
 | **Static<br>member<br>declaration** | `cnt = 0`<br>`@staticmethod`<br>`def inc():` | `static cnt = 0`<br>`static inc() {}` | `static $cnt = 0`<br>`static function inc() {}` |
 | **Access member<br>inside method** | `self.prop`<br>`self.method(param)` | `this.prop`<br>`this.method(param)` | `$this->prop`<br>`$this->method($param)` |
-| **Instance** | `obj = C1("val")` | `let obj = new C1("val")` | `$obj = new C1("val")` |
+| **Instance** | `obj = C1("val")` | `const obj = new C1("val")` | `$obj = new C1("val")` |
 | **Access<br>member** | `obj.prop`<br>`obj.method(param)` | `obj.prop`<br>`obj.method(param)` | `$obj->prop`<br>`$obj->method($param)` |
 | **Access<br>static<br>member** | `C1.cnt`<br>`C1.inc()` | `C1.cnt`<br>`C1.inc()` | `C1::$cnt`<br>`C1::inc()` |
 | **Inheritance** | `class C2(C1):` | `class C2 extends C1 {}` | `class C2 extends C1 {}` |
